@@ -1,0 +1,25 @@
+{
+  "name": "javascript-refresher-start",
+  "version": "1.0.0",
+  "description": "<자바스크립트 새로고침> 강의 예제 레포지토리",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blcklamb/react-complete-guide-2023.git"
+  },
+  "keywords": [
+    "javascript"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blcklamb/react-complete-guide-2023/issues"
+  },
+  "homepage": "https://github.com/blcklamb/react-complete-guide-2023#readme",
+  "dependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
+}
