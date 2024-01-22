@@ -17,3 +17,9 @@ Javascript부터 웹 어플리케이션 배포까지, React와 프론트엔드 �
 2023년 최신 총 4개의 프로젝트를 거쳐 배워보는 React.js&Next.js
 
 [강의 링크](https://www.udemy.com/course/react-next-master/)
+
+## 3. React-Three-Fiber-R3F
+
+React와 Three.js 를 한번에 3D 기초부터 현업에 사용할 수 있는 프로젝트 그리고 최적화 팁 까지
+
+[강의 링크](https://www.udemy.com/course/react-three-fiber-r3f/)
