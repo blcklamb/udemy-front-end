@@ -1,5 +1,3 @@
-import "./box.css";
-
 interface ViewerProps {
   count: number;
 }
