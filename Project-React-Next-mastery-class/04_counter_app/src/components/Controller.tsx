@@ -1,8 +1,11 @@
+import useUpdate from "../hooks/useUpdate";
+
 interface ControllerProps {
   onControl: (value: number) => void;
 }
 
 const Controller = ({ onControl }: ControllerProps) => {
+  useUpdate(() => console.log("Controller 업데이트"));
   const onChange = (e: React.MouseEvent<HTMLButtonElement>) => {
     const eventTarget = e.target as HTMLButtonElement;
     onControl(+eventTarget.innerText);
