@@ -1,36 +1,38 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
-export default function Home() {
-  const code = "KOR";
+import { fetchCountries } from "@/api";
+import { useEffect } from "react";
 
-  const router = useRouter();
+interface Country {
+  capital: string[];
+  code: string;
+  commonName: string;
+  flagEmoji: string;
+  flagImg: string;
+  population: number;
+  region: string;
+}
 
-  const onClickButton01 = () => {
-    router.push("/search");
-  };
-  const onClickButton02 = () => {
-    router.push({ pathname: "/country/[code]", query: { code } });
-  };
-  const onClickButton03 = () => {
-    router.replace("/search");
-  };
-
+export default function Home(props: { countries: Country[] }) {
+  // client에서만 실행시키고 싶은 코드
+  useEffect(() => {
+    console.log("HOME MOUNT");
+  });
   return (
     <div>
-      Home
-      <div>
-        <button type="button" onClick={onClickButton03}>
-          Search 페이지로 이동
-        </button>
-      </div>
-      <div>
-        <Link href={"/search"}>Search Page 이동</Link>
-      </div>
-      <div>
-        <Link href={{ pathname: "/country/[code]", query: { code } }}>
-          {code} 페이지로 이동
-        </Link>
-      </div>
+      {props.countries.map((country) => (
+        <div key={country.code}>{country.commonName}</div>
+      ))}
     </div>
   );
 }
+
+export const getServerSideProps = async () => {
+  // SSR을 위해 서버측에서 페이지 컴포넌트에게 전달할 데이터를 설정하는 함수
+
+  // API 호출
+  const countries = await fetchCountries();
+  return {
+    props: {
+      countries,
+    },
+  };
+};
