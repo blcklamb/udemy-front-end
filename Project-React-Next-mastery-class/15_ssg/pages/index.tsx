@@ -25,11 +25,12 @@ export default function Home(props: { countries: Country[] }) {
   );
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   // SSR을 위해 서버측에서 페이지 컴포넌트에게 전달할 데이터를 설정하는 함수
 
   // API 호출
   const countries = await fetchCountries();
+  console.log("=====call server side=====");
   return {
     props: {
       countries,
